@@ -18,6 +18,7 @@ public class User {
     private List<Role> roles;
 
     public User() {
+        //constructor without args
     }
 
     public User(Long id, String username, String password, boolean locked, Member member, List<Role> roles) {

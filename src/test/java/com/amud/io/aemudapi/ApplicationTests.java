@@ -7,23 +7,5 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ApplicationTests {
-	@BeforeEach
-	void setUp() {
-		System.out.println("before each test");
-	}
 
-	@AfterEach
-	void tearDown() {
-
-	}
-
-	@Test
-	void contextLoads() {
-		System.out.println("contextLoads");
-	}
-
-	@Test
-	void test() {
-		System.out.println("test");
-	}
 }

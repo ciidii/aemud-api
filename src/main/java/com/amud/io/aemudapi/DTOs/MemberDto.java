@@ -1,16 +1,11 @@
-package com.amud.io.aemudapi.entities;
+package com.amud.io.aemudapi.DTOs;
 
-import com.amud.io.aemudapi.buiders.MemberBuilder;
-import jakarta.persistence.*;
+import com.amud.io.aemudapi.entities.Club;
+import com.amud.io.aemudapi.entities.Commission;
 
 import java.util.List;
 
-@Entity
-@Table(name = "member")
-public class Member {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class MemberDto {
     private Long id;
     private String name;
     private String firstname;
@@ -33,13 +28,10 @@ public class Member {
     private String yearOfMembership;
     private String twinsName;
     private boolean pay;
-    @ManyToOne
     private Commission commission;
-    @ManyToMany()
     private List<Club> clubs;
 
-    public Member() {
-        //constructor without args
+    public MemberDto() {
     }
 
     public Long getId() {
@@ -230,11 +222,7 @@ public class Member {
         return clubs;
     }
 
-    public void setClubs(List<Club> club) {
-        this.clubs = club;
-    }
-
-    public static MemberBuilder builder() {
-        return new MemberBuilder();
+    public void setClubs(List<Club> clubs) {
+        this.clubs = clubs;
     }
 }

@@ -11,7 +11,9 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    public Role() {}
+    public Role() {
+        //constructor without args
+    }
 
     public Role(Long id, String name) {
         this.id = id;

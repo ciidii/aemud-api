@@ -2,7 +2,6 @@ package com.amud.io.aemudapi.entities;
 
 import jakarta.persistence.*;
 
-import java.sql.Time;
 import java.time.DayOfWeek;
 import java.time.LocalTime;
 import java.time.Month;
@@ -17,13 +16,14 @@ public class Contribution {
     private Long id;
     private Year year;
     private Month month;
-    private DayOfWeek dayOfWeek;;
+    private DayOfWeek dayOfWeek;
     private LocalTime localTime;
     private Float amount;
     @ManyToOne(fetch = FetchType.LAZY)
     private Member member;
 
     public Contribution() {
+        //constructor without args
     }
 
     public Contribution(Long id, Year year, Month month, DayOfWeek dayOfWeek, LocalTime localTime, Float amount, Member member) {

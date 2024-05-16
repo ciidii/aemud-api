@@ -3,14 +3,14 @@ package com.amud.io.aemudapi.entities;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "commission")
 public class Commission {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
-    public Commission() {
 
+    public Commission() {
+        //constructor without args
     }
 
     public Commission(Long id, String name) {

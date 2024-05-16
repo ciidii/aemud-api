@@ -28,8 +28,31 @@ class UserTest {
         clubs = new ArrayList<>();
         clubs.add(new Club(1L, "Club Informatique"));
         clubs.add(new Club(1L, "Club Maths"));
-        member = new Member(1L,"Boubacar","Diallo","SN","10/03/2000","Single","Malika","Dakar","7777777777","cidi@gmail.com","Tanou","FSR","Math-Info","bourse_entier","Set Setal","Pavillons H","Arabe","","no","no","2019","Loum","no",commission,clubs);
-    }
+        member = Member.builder()
+                .setId(1L)
+                .setName("Diallo")
+                .setEmail("boubacar@gmail.com")
+                .setFirstname("Boubacar")
+                .setNationality("SN")
+                .setBirthday("10/03/2000")
+                .setMaritalStatus("Single")
+                .setAddressInDakar("Malika")
+                .setHolidayAddress("Dakar")
+                .setNumberPhone("7777777777")
+                .setPersonToCall("Tanou")
+                .setFaculty("FSR")
+                .setDepartment("Math-Info")
+                .setClubs(clubs)
+                .setCommission(commission)
+                .setBourse("bourse_entier")
+                .setParticipatedActivity("Set Setal")
+                .setAddressToCampus("Pavillons H")
+                .setAemudCourses("Arabe")
+                .setOtherCourses("No")
+                .setYearOfMembership("2019")
+                .setTwinsName("Loum")
+                .setPay(false)
+                .build();    }
 
     @Test
      void testConstructorsWithAllAgrs() {

@@ -11,6 +11,7 @@ public class Club {
     private String name;
 
     public Club() {
+        //constructor without args
     }
 
     public Club(Long id, String name) {

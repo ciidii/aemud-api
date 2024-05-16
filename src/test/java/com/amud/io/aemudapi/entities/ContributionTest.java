@@ -23,7 +23,31 @@ class ContributionTest {
         clubs = new ArrayList<>();
         clubs.add(new Club(1L, "Club Informatique"));
         clubs.add(new Club(1L, "Club Maths"));
-        member = new Member(1L, "Boubacar", "Diallo", "SN", "10/03/2000", "Single", "Malika", "Dakar", "7777777777", "cidi@gmail.com", "Tanou", "FSR", "Math-Info", "bourse_entier", "Set Setal", "Pavillons H", "Arabe", "", "no", "no", "2019", "Loum", "no", commission, clubs);
+        member = Member.builder()
+                .setId(1L)
+                .setName("Diallo")
+                .setEmail("boubacar@gmail.com")
+                .setFirstname("Boubacar")
+                .setNationality("SN")
+                .setBirthday("10/03/2000")
+                .setMaritalStatus("Single")
+                .setAddressInDakar("Malika")
+                .setHolidayAddress("Dakar")
+                .setNumberPhone("7777777777")
+                .setPersonToCall("Tanou")
+                .setFaculty("FSR")
+                .setDepartment("Math-Info")
+                .setClubs(clubs)
+                .setCommission(commission)
+                .setBourse("bourse_entier")
+                .setParticipatedActivity("Set Setal")
+                .setAddressToCampus("Pavillons H")
+                .setAemudCourses("Arabe")
+                .setOtherCourses("No")
+                .setYearOfMembership("2019")
+                .setTwinsName("Loum")
+                .setPay(false)
+                .build();
     }
 
     @Test
@@ -83,12 +107,12 @@ class ContributionTest {
         contribution.setAmount(10.0f);
         contribution.setMember(member);
         //then
-        assertThat(1L).isEqualTo(contribution.getId());
+        assertThat(contribution.getId()).isEqualTo(1L);
         assertThat(Year.of(2020)).isEqualTo(contribution.getYear());
         assertThat(Month.of(12)).isEqualTo(contribution.getMonth());
-        assertThat(DayOfWeek.MONDAY).isEqualTo(contribution.getDayOfWeek());
+        assertThat(contribution.getDayOfWeek()).isEqualTo(DayOfWeek.MONDAY);
         assertThat(LocalTime.of(23, 59, 59)).isEqualTo(contribution.getLocalTime());
-        assertThat(10.0f).isEqualTo(contribution.getAmount());
+        assertThat(contribution.getAmount()).isEqualTo(10.0f);
         assertThat(member).isEqualTo(contribution.getMember());
 
     }
